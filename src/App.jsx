@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import General from './components/cv/General';
+import GeneralInput from './components/input/GeneralInput';
 import Education from './components/cv/Education';
 import Experience from './components/cv/Experience';
 
-const general = {
+const generalData = {
   name: 'Jake Ryan',
   tel: '123-456-7890',
   email: 'jake@su.edu',
@@ -67,8 +69,15 @@ const experience = [
 ];
 
 export default function App() {
+  const [general, setGeneral] = useState(generalData);
+
+  function handleGeneralInput(property, value) {
+    setGeneral({ ...general, [property]: value });
+  }
+
   return (
     <>
+      <GeneralInput data={general} onInput={handleGeneralInput} />
       <General details={general} />
       <Education details={education} />
       <Experience details={experience} />
