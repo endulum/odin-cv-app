@@ -4,9 +4,7 @@ export default function Experience({ details }) {
   return (
     <div className="experience">
       <h2>Experience</h2>
-      <div className="experience-list">
-        {details.map((role) => <Role key={role.position} details={role} />)}
-      </div>
+      {details.map((role) => <Role key={role.position} details={role} />)}
     </div>
   );
 }

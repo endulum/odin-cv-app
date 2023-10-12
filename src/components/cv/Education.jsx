@@ -4,9 +4,7 @@ export default function Education({ details }) {
   return (
     <div className="education">
       <h2>Education</h2>
-      <div className="education-list">
-        {details.map((school) => <School key={school.school} details={school} />)}
-      </div>
+      {details.map((school) => <School key={school.school} details={school} />)}
     </div>
   );
 }
@@ -21,7 +19,7 @@ function School({ details }) {
         {' '}
         <span style={{ fontWeight: 'normal' }}>{details.location}</span>
       </h3>
-      <h4 className="education-school">{details.degree}</h4>
+      <h4 className="education-degree">{details.degree}</h4>
       <StartToEnd start={details.start} end={details.end} />
     </div>
   );

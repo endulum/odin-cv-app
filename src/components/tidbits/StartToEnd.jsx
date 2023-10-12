@@ -1,6 +1,6 @@
 export default function StartToEnd({ start, end }) {
   return (
-    <p>
+    <span className="start-to-end">
       {start && (
         <span>
           {new Date(start).toLocaleString('default', { month: 'short', year: 'numeric' })}
@@ -14,6 +14,6 @@ export default function StartToEnd({ start, end }) {
       ) : (
         <span>Present</span>
       )}
-    </p>
+    </span>
   );
 }
