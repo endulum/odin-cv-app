@@ -1,3 +1,5 @@
+import StartToEnd from '../tidbits/StartToEnd';
+
 export default function Education({ details }) {
   return (
     <div className="education">
@@ -20,6 +22,7 @@ function School({ details }) {
         <span style={{ fontWeight: 'normal' }}>{details.location}</span>
       </h3>
       <h4 className="education-school">{details.degree}</h4>
+      <StartToEnd start={details.start} end={details.end} />
     </div>
   );
 }

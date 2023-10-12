@@ -14,14 +14,14 @@ const education = [
     school: 'Southwestern University',
     degree: 'Bachelor of Arts in Computer Science, Minor in Business',
     location: 'Georgetown, TX',
-    // start: '2018-09',
-    // end: '2021-05',
+    start: '2018-09',
+    end: '2021-05',
   }, {
     school: 'Blinn College',
     degree: 'Associate\'s in Liberal Arts',
     location: 'Bryan, TX',
-    // start: '2014-09',
-    // end: '2018-05',
+    start: '2014-09',
+    end: '2018-05',
   },
 ];
 
