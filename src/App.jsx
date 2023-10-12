@@ -1,5 +1,6 @@
 import General from './components/cv/General';
 import Education from './components/cv/Education';
+import Experience from './components/cv/Experience';
 
 const general = {
   name: 'Jake Ryan',
@@ -25,11 +26,52 @@ const education = [
   },
 ];
 
+const experience = [
+  {
+    position: 'Undergraduate Research Assistant',
+    company: 'Texas A&M University',
+    location: 'College Station, TX',
+    start: '2020-05',
+    end: null,
+    bullets: [
+      'Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems',
+      'Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data',
+      'Explored ways to visualize GitHub collaboration in a class setting',
+    ],
+  }, {
+    position: 'Information Technology Support Specialist',
+    company: 'Southwestern University',
+    location: 'Georgetown, TX',
+    start: '2018-09',
+    end: null,
+    bullets: [
+      'Communicate with managers to set up campus computers used on campus',
+      'Assess and troubleshoot computer problems brought by students, faculty, and staff',
+      'Maintain upkeep of computers, classroom equipment, and 200 printers across campus',
+    ],
+  }, {
+    position: 'Artificial Intelligence Research Assistant',
+    company: 'Southwestern University',
+    location: 'Georgetown, TX',
+    start: '2019-05',
+    end: '2019-08',
+    bullets: [
+      'Explored methods to generate video game dungeons based off of \'The Legend of Zelda\'',
+      'Developed a game in Java to test the generated dungeons',
+      'Contributed 50K+ lines of code to an established codebase via Git',
+      'Conducted a human subject study to determine which video game dungeon generation technique is enjoyable',
+      'Wrote an 8+ page paper and gave multiple presentations on-campus',
+      'Presented virtually to the World Conference on Computational Intelligence',
+    ],
+  },
+];
+
 export default function App() {
   return (
     <>
       <General details={general} />
       <Education details={education} />
+      <Experience details={experience} />
     </>
   );
 }
