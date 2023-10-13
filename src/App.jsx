@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DesignInput from './components/input/DesignInput';
 import General from './components/cv/General';
 import GeneralInput from './components/input/GeneralInput';
 import Education from './components/cv/Education';
@@ -76,6 +77,10 @@ export default function App() {
   const [general, setGeneral] = useState(generalData);
   const [fontType, setFontType] = useState('serif');
 
+  function handleChangeFont(e) {
+    setFontType(e.target.value);
+  }
+
   function handleGeneralInput(property, value) {
     setGeneral({ ...general, [property]: value });
   }
@@ -83,6 +88,7 @@ export default function App() {
   return (
     <>
       <div className="input-forms">
+        <DesignInput data={fontType} onInput={handleChangeFont} />
         <GeneralInput data={general} onInput={handleGeneralInput} />
       </div>
 
