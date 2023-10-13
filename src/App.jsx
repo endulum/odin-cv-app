@@ -4,6 +4,10 @@ import GeneralInput from './components/input/GeneralInput';
 import Education from './components/cv/Education';
 import Experience from './components/cv/Experience';
 
+import './styles/base.css';
+import './styles/forms.css';
+import './styles/cv.css';
+
 const generalData = {
   name: 'Jake Ryan',
   tel: '123-456-7890',
@@ -77,10 +81,15 @@ export default function App() {
 
   return (
     <>
-      <GeneralInput data={general} onInput={handleGeneralInput} />
-      <General details={general} />
-      <Education details={education} />
-      <Experience details={experience} />
+      <div className="input-forms">
+        <GeneralInput data={general} onInput={handleGeneralInput} />
+      </div>
+
+      <div className="cv">
+        <General details={general} />
+        <Education details={education} />
+        <Experience details={experience} />
+      </div>
     </>
   );
 }
