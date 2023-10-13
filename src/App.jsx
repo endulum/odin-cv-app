@@ -6,61 +6,65 @@ import GeneralInput from './components/input/GeneralInput';
 import Education from './components/cv/Education';
 import EducationInput from './components/input/EducationInput';
 import Experience from './components/cv/Experience';
+import ExperienceInput from './components/input/ExperienceInput';
 
 import './styles/base.css';
 import './styles/forms.css';
 import './styles/cv.css';
 
-const generalData = {
-  name: 'Jake Ryan',
-  tel: '123-456-7890',
-  email: 'jake@su.edu',
-  linkedIn: 'linkedin.com/ln/jake',
-  gitHub: 'github.com/jake',
-};
+// const generalData = {
+//   name: 'Jake Ryan',
+//   tel: '123-456-7890',
+//   email: 'jake@su.edu',
+//   linkedIn: 'linkedin.com/ln/jake',
+//   gitHub: 'github.com/jake',
+// };
 
-const educationData = [
+// const educationData = [
+//   {
+//     id: uuid(),
+//     school: 'Southwestern University',
+//     degree: 'Bachelor of Arts in Computer Science, Minor in Business',
+//     location: 'Georgetown, TX',
+//     start: '2018-09',
+//     end: '2021-05',
+//   }, {
+//     id: uuid(),
+//     school: 'Blinn College',
+//     degree: 'Associate\'s in Liberal Arts',
+//     location: 'Bryan, TX',
+//     start: '2014-09',
+//     end: '2018-05',
+//   },
+// ];
+
+const experienceData = [
   {
     id: uuid(),
-    school: 'Southwestern University',
-    degree: 'Bachelor of Arts in Computer Science, Minor in Business',
-    location: 'Georgetown, TX',
-    start: '2018-09',
-    end: '2021-05',
-  }, {
-    id: uuid(),
-    school: 'Blinn College',
-    degree: 'Associate\'s in Liberal Arts',
-    location: 'Bryan, TX',
-    start: '2014-09',
-    end: '2018-05',
-  },
-];
-
-const experience = [
-  {
     position: 'Undergraduate Research Assistant',
     company: 'Texas A&M University',
     location: 'College Station, TX',
     start: '2020-05',
-    end: null,
+    end: '',
     bullets: [
       'Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems',
       'Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data',
       'Explored ways to visualize GitHub collaboration in a class setting',
     ],
   }, {
+    id: uuid(),
     position: 'Information Technology Support Specialist',
     company: 'Southwestern University',
     location: 'Georgetown, TX',
     start: '2018-09',
-    end: null,
+    end: '',
     bullets: [
       'Communicate with managers to set up campus computers used on campus',
       'Assess and troubleshoot computer problems brought by students, faculty, and staff',
       'Maintain upkeep of computers, classroom equipment, and 200 printers across campus',
     ],
   }, {
+    id: uuid(),
     position: 'Artificial Intelligence Research Assistant',
     company: 'Southwestern University',
     location: 'Georgetown, TX',
@@ -78,8 +82,15 @@ const experience = [
 ];
 
 export default function App() {
-  const [general, setGeneral] = useState(generalData);
-  const [education, setEducation] = useState(educationData);
+  const [general, setGeneral] = useState({
+    name: '',
+    tel: '',
+    email: '',
+    linkedIn: '',
+    gitHub: '',
+  });
+  const [education, setEducation] = useState([]);
+  const [experience, setExperience] = useState([]);
   const [fontType, setFontType] = useState('serif');
 
   function handleChangeFont(e) {
@@ -113,12 +124,37 @@ export default function App() {
     }]);
   }
 
+  function handleExperienceInput(jobId, property, value) {
+    if (!property) {
+      setExperience([...experience.filter((job) => job.id !== jobId)]);
+    } else {
+      setExperience([...experience.map((job) => {
+        if (job.id === jobId) {
+          return { ...job, [property]: value };
+        } return { ...job };
+      })]);
+    }
+  }
+
+  function handleAddExperience() {
+    setExperience([...experience, {
+      id: uuid(),
+      position: '(position name)',
+      company: '(company name)',
+      location: '(location of workplace)',
+      start: '',
+      end: '',
+      bullets: [],
+    }]);
+  }
+
   return (
     <>
       <div className="input-forms">
         <DesignInput data={fontType} onInput={handleChangeFont} />
         <GeneralInput data={general} onInput={handleGeneralInput} />
         <EducationInput data={education} onInput={handleEducationInput} onAdd={handleAddEducation} />
+        <ExperienceInput data={experience} onInput={handleExperienceInput} onAdd={handleAddExperience} />
       </div>
 
       <div className={`${fontType} cv`}>
