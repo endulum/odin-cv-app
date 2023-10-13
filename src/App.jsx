@@ -74,6 +74,7 @@ const experience = [
 
 export default function App() {
   const [general, setGeneral] = useState(generalData);
+  const [fontType, setFontType] = useState('serif');
 
   function handleGeneralInput(property, value) {
     setGeneral({ ...general, [property]: value });
@@ -85,7 +86,7 @@ export default function App() {
         <GeneralInput data={general} onInput={handleGeneralInput} />
       </div>
 
-      <div className="cv">
+      <div className={`${fontType} cv`}>
         <General details={general} />
         <Education details={education} />
         <Experience details={experience} />

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'CM Serif Roman';
+  src: url('cmunrm-webfont.woff');
+}
+
+@font-face {
+  font-family: 'CM Serif Oblique';
+  src: url('cmunti-webfont.woff');
+}
+
+@font-face {
+  font-family: 'CM Serif Bold';
+  src: url('cmunbx-webfont.woff');
+}
+
+@font-face {
+  font-family: 'CM Serif Bold Oblique';
+  src: url('cmunbi-webfont.woff');
+}
+
+@font-face {
+  font-family: 'CM Sans';
+  src: url('cmunss-webfont.woff');
+}
+
+@font-face {
+  font-family: 'CM Sans Bold';
+  src: url('cmunsx-webfont.woff');
+}
+
+@font-face {
+  font-family: 'CM Sans Oblique';
+  src: url('cmunsi-webfont.woff');
+}
+
+.serif {
+  font-family: 'CM Serif Roman';
+
+  & .general, .education-school, .experience-position {
+    font-family: 'CM Serif Bold';
+  }
+
+  & .education-location, .experience-location {
+    font-family: 'CM Serif Oblique';
+  }
+}
+
+.sans-serif {
+  font-family: 'CM Sans';
+
+  & .general, .education-school, .experience-position {
+    font-family: 'CM Sans Bold';
+  }
+
+  & .education-location, .experience-location {
+    font-family: 'CM Sans Oblique';
+  }
+}

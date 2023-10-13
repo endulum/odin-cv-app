@@ -16,9 +16,9 @@ function Role({ details }) {
       <h4 className="experience-company">
         {details.company}
         {' '}
-        •
+        |
         {' '}
-        <span style={{ fontWeight: 'normal' }}>{details.location}</span>
+        <span className="experience-location" style={{ fontWeight: 'normal' }}>{details.location}</span>
       </h4>
       <ul className="experience-info">
         {details.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}

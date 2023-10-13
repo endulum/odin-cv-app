@@ -4,7 +4,7 @@ export default function StartToEnd({ start, end }) {
       {start && (
         <span>
           {new Date(start).toLocaleString('default', { month: 'short', year: 'numeric' })}
-          {' - '}
+          {' — '}
         </span>
       )}
       {end ? (

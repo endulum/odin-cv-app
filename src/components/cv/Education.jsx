@@ -15,9 +15,9 @@ function School({ details }) {
       <h3 className="education-school">
         {details.school}
         {' '}
-        •
+        |
         {' '}
-        <span style={{ fontWeight: 'normal' }}>{details.location}</span>
+        <span className="education-location" style={{ fontWeight: 'normal' }}>{details.location}</span>
       </h3>
       <h4 className="education-degree">{details.degree}</h4>
       <StartToEnd start={details.start} end={details.end} />
