@@ -4,7 +4,7 @@ export default function Education({ details }) {
   return (
     <div className="education">
       <h2>Education</h2>
-      {details.map((school) => <School key={school.school} details={school} />)}
+      {details.map((school) => <School key={school.id} details={school} />)}
     </div>
   );
 }

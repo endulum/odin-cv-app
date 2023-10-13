@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import DesignInput from './components/input/DesignInput';
 import General from './components/cv/General';
 import GeneralInput from './components/input/GeneralInput';
 import Education from './components/cv/Education';
+import EducationInput from './components/input/EducationInput';
 import Experience from './components/cv/Experience';
 
 import './styles/base.css';
@@ -17,14 +19,16 @@ const generalData = {
   gitHub: 'github.com/jake',
 };
 
-const education = [
+const educationData = [
   {
+    id: uuid(),
     school: 'Southwestern University',
     degree: 'Bachelor of Arts in Computer Science, Minor in Business',
     location: 'Georgetown, TX',
     start: '2018-09',
     end: '2021-05',
   }, {
+    id: uuid(),
     school: 'Blinn College',
     degree: 'Associate\'s in Liberal Arts',
     location: 'Bryan, TX',
@@ -75,6 +79,7 @@ const experience = [
 
 export default function App() {
   const [general, setGeneral] = useState(generalData);
+  const [education, setEducation] = useState(educationData);
   const [fontType, setFontType] = useState('serif');
 
   function handleChangeFont(e) {
@@ -85,11 +90,35 @@ export default function App() {
     setGeneral({ ...general, [property]: value });
   }
 
+  function handleEducationInput(schoolId, property, value) {
+    if (!property) {
+      setEducation([...education.filter((school) => (school.id !== schoolId))]);
+    } else {
+      setEducation([...education.map((school) => {
+        if (school.id === schoolId) {
+          return { ...school, [property]: value };
+        } return { ...school };
+      })]);
+    }
+  }
+
+  function handleAddEducation() {
+    setEducation([...education, {
+      id: uuid(),
+      school: '(school name)',
+      degree: '(degree of study)',
+      location: '(location of school)',
+      start: '',
+      end: '',
+    }]);
+  }
+
   return (
     <>
       <div className="input-forms">
         <DesignInput data={fontType} onInput={handleChangeFont} />
         <GeneralInput data={general} onInput={handleGeneralInput} />
+        <EducationInput data={education} onInput={handleEducationInput} onAdd={handleAddEducation} />
       </div>
 
       <div className={`${fontType} cv`}>
