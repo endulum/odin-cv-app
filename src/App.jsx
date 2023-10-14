@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
+import DesignEditor from './components/editor/DesignEditor';
 import EditorPersonal from './components/editor/EditorPersonal';
 import EditorEducation from './components/editor/EditorEducation';
 import EditorExperience from './components/editor/EditorExperience';
@@ -109,9 +110,22 @@ export default function App() {
     })]);
   }
 
+  const [color, setColor] = useState('#5F9EA0');
+  const [font, setFont] = useState('serif');
+
+  function handleEditColor(e) { setColor(e.target.value); }
+  function handleEditFont(e) { setFont(e.target.value); }
+
   return (
     <>
       <div className="editors">
+        <DesignEditor
+          onEditColor={handleEditColor}
+          onEditFont={handleEditFont}
+          color={color}
+          font={font}
+        />
+
         <EditorPersonal
           onEditPersonalInfo={handleEditPersonalInfo}
           personalInfo={personalInfo}
@@ -132,10 +146,10 @@ export default function App() {
         />
       </div>
 
-      <div className="serif cv">
-        <Personal details={personalInfo} />
-        <Education details={educationInfo} />
-        <Experience details={experienceInfo} />
+      <div className={`${font} cv`}>
+        <Personal details={personalInfo} color={color} />
+        <Education details={educationInfo} color={color} />
+        <Experience details={experienceInfo} color={color} />
       </div>
     </>
   );

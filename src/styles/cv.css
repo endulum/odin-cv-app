@@ -14,7 +14,6 @@
 
 .section-personal {
   color: white;
-  background-color: slategray;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +29,7 @@
     flex-direction: row;  
     list-style: none;
     gap: 2.5rem;
-    padding-top: 0.5rem;
+    padding-top: 0.25rem;
   }
 }
 
@@ -42,7 +41,6 @@
   & .header-education, .header-experience {
     font-size: 16pt;
     font-variant: small-caps;
-    border-bottom: 1px solid slategray;
   }
 
   & .body-education, .body-experience {
@@ -76,7 +74,6 @@
       & .bullet-point {
         min-width: 5px;
         min-height: 5px;
-        background-color: slategray;
         margin-top: 5pt;
       }
     }

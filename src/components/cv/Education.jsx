@@ -1,10 +1,18 @@
 import StartToEnd from './StartToEnd';
 
-export default function Education({ details }) {
+export default function Education({ details, color }) {
   if (details.length > 0) {
     return (
       <div className="section-education">
-        <h2 className="header-education">Education</h2>
+        <h2
+          className="header-education"
+          style={{
+            borderBottom: `1px solid ${color}`,
+          }}
+        >
+          Education
+
+        </h2>
         <div className="body-education">
           {details.map((school) => <School key={school.id} details={school} />)}
         </div>
