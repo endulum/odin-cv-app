@@ -32,27 +32,3 @@
   font-family: 'CM Sans Oblique';
   src: url('cmunsi-webfont.woff');
 }
-
-.serif {
-  font-family: 'CM Serif Roman';
-
-  & .general, .education-school, .experience-position {
-    font-family: 'CM Serif Bold';
-  }
-
-  & .education-location, .experience-location {
-    font-family: 'CM Serif Oblique';
-  }
-}
-
-.sans-serif {
-  font-family: 'CM Sans';
-
-  & .general, .education-school, .experience-position {
-    font-family: 'CM Sans Bold';
-  }
-
-  & .education-location, .experience-location {
-    font-family: 'CM Sans Oblique';
-  }
-}
