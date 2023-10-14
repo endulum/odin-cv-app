@@ -5,7 +5,7 @@ export default function EditorEducation({
 }) {
   return (
     <div className="editor">
-      <h2>Education</h2>
+      <h2 className="editor-header">Education</h2>
 
       {educationInfo.map((school) => (
         <div className="editor-section" key={school.id}>
@@ -36,7 +36,7 @@ export default function EditorEducation({
             />
           </label>
 
-          <label>
+          <label className="label-half-width">
             <span>Start: </span>
             <input
               type="month"
@@ -45,7 +45,7 @@ export default function EditorEducation({
             />
           </label>
 
-          <label>
+          <label className="label-half-width">
             <span>End: </span>
             <input
               type="month"

@@ -10,6 +10,7 @@ import Cv from './components/cv/Cv';
 import { personalJakes, educationJakes, experienceJakes } from './Data';
 
 import './styles/base.css';
+import './styles/editor.css';
 
 export default function App() {
   const [personalInfo, setPersonalInfo] = useState(personalJakes);
@@ -56,12 +57,17 @@ export default function App() {
   function handleAddExperience() {
     setExperienceInfo([...experienceInfo, {
       id: uuid(),
-      position: 'name of work position',
-      company: 'name of company',
-      location: 'location of work',
+      position: '(name of work position)',
+      company: '(name of company)',
+      location: '(location of work)',
       start: '',
       end: '',
-      bullets: [],
+      bullets: [
+        {
+          id: uuid(),
+          bulletText: '(skill highlight during work experience)',
+        },
+      ],
     }]);
   }
 

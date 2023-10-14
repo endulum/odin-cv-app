@@ -9,7 +9,7 @@ export default function EditorExperience({
 }) {
   return (
     <div className="editor">
-      <h2>Experience</h2>
+      <h2 className="editor-header">Experience</h2>
 
       {experienceInfo.map((job) => (
         <div className="editor-section" key={job.id}>
@@ -40,7 +40,7 @@ export default function EditorExperience({
             />
           </label>
 
-          <label>
+          <label className="label-half-width">
             <span>Start: </span>
             <input
               type="month"
@@ -49,7 +49,7 @@ export default function EditorExperience({
             />
           </label>
 
-          <label>
+          <label className="label-half-width">
             <span>End: </span>
             <input
               type="month"

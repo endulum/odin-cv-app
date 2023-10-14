@@ -7,7 +7,7 @@ export default function BulletEditor({
   return (
     <ul className="bullets">
       {bulletInfo.map((bullet) => (
-        <li key={bullet.id}>
+        <li className="bullet" key={bullet.id}>
           <input
             type="text"
             value={bullet.bulletText}
@@ -18,7 +18,7 @@ export default function BulletEditor({
             type="button"
             onClick={() => onEditBullet(jobId, bullet.id, undefined)}
           >
-            Delete Bullet
+            Remove
           </button>
         </li>
       ))}
