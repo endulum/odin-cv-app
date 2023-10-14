@@ -26,14 +26,14 @@ export const educationJakes = [
   },
 ];
 
-export const educationEmpty = {
-  id: uuid(),
-  school: '(school or institution name)',
-  degree: '(degree or certification of study)',
-  location: '(location of school or institution)',
-  start: '',
-  end: '',
-};
+// export const educationEmpty = {
+//   id: uuid(),
+//   school: '(school or institution name)',
+//   degree: '(degree or certification of study)',
+//   location: '(location of school or institution)',
+//   start: '',
+//   end: '',
+// };
 
 export const experienceJakes = [
   {
@@ -45,13 +45,13 @@ export const experienceJakes = [
     end: '',
     bullets: [{
       id: uuid(),
-      bullet: 'Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems',
+      bulletText: 'Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems',
     }, {
       id: uuid(),
-      bullet: 'Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data',
+      bulletText: 'Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data',
     }, {
       id: uuid(),
-      bullet: 'Explored ways to visualize GitHub collaboration in a class setting',
+      bulletText: 'Explored ways to visualize GitHub collaboration in a class setting',
     }],
   }, {
     id: uuid(),
@@ -62,13 +62,13 @@ export const experienceJakes = [
     end: '',
     bullets: [{
       id: uuid(),
-      bullet: 'Communicate with managers to set up campus computers used on campus',
+      bulletText: 'Communicate with managers to set up campus computers used on campus',
     }, {
       id: uuid(),
-      bullet: 'Assess and troubleshoot computer problems brought by students, faculty, and staff',
+      bulletText: 'Assess and troubleshoot computer problems brought by students, faculty, and staff',
     }, {
       id: uuid(),
-      bullet: 'Maintain upkeep of computers, classroom equipment, and 200 printers across campus',
+      bulletText: 'Maintain upkeep of computers, classroom equipment, and 200 printers across campus',
     }],
   }, {
     id: uuid(),
@@ -79,37 +79,37 @@ export const experienceJakes = [
     end: '2019-08',
     bullets: [{
       id: uuid(),
-      bullet: "Explored methods to generate video game dungeons based off of 'The Legend of Zelda'",
+      bulletText: "Explored methods to generate video game dungeons based off of 'The Legend of Zelda'",
     }, {
       id: uuid(),
-      bullet: 'Developed a game in Java to test the generated dungeons',
+      bulletText: 'Developed a game in Java to test the generated dungeons',
     }, {
       id: uuid(),
-      bullet: 'Contributed 50K+ lines of code to an established codebase via Git',
+      bulletText: 'Contributed 50K+ lines of code to an established codebase via Git',
     }, {
       id: uuid(),
-      bullet: 'Conducted a human subject study to determine which video game dungeon generation technique is enjoyable',
+      bulletText: 'Conducted a human subject study to determine which video game dungeon generation technique is enjoyable',
     }, {
       id: uuid(),
-      bullet: 'Wrote an 8+ page paper and gave multiple presentations on-campus',
+      bulletText: 'Wrote an 8+ page paper and gave multiple presentations on-campus',
     }, {
       id: uuid(),
-      bullet: 'Presented virtually to the World Conference on Computational Intelligence',
+      bulletText: 'Presented virtually to the World Conference on Computational Intelligence',
     }],
   },
 ];
 
-export const experienceEmpty = {
-  id: uuid(),
-  position: 'name of work position',
-  company: 'name of company',
-  location: 'location of work',
-  start: '',
-  end: '',
-  bullets: [],
-};
+// export const experienceEmpty = {
+//   id: uuid(),
+//   position: 'name of work position',
+//   company: 'name of company',
+//   location: 'location of work',
+//   start: '',
+//   end: '',
+//   bullets: [],
+// };
 
-export const bulletEmpty = {
-  id: uuid(),
-  bullet: '',
-};
+// export const bulletEmpty = {
+// id: uuid(),
+// bulletText: '',
+// };
