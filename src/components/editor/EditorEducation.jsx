@@ -1,13 +1,26 @@
+import { useState } from 'react';
+
 export default function EditorEducation({
   onEditEducationInfo,
   onAddEducation,
   educationInfo,
 }) {
+  const [hidden, setHidden] = useState(true);
+
   return (
     <div className="editor">
       <h2 className="editor-header">Education</h2>
 
-      {educationInfo.map((school) => (
+      <button
+        className="hide-button"
+        type="button"
+        onClick={() => setHidden(!hidden)}
+      >
+        {hidden && ('Edit')}
+        {!hidden && ('Done')}
+      </button>
+
+      {!hidden && educationInfo.map((school) => (
         <div className="editor-section" key={school.id}>
           <label>
             <span>School: </span>
@@ -64,12 +77,14 @@ export default function EditorEducation({
         </div>
       ))}
 
+      {!hidden && (
       <button
         type="button"
         onClick={onAddEducation}
       >
         Add School
       </button>
+      )}
     </div>
   );
 }

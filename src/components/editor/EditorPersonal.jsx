@@ -1,10 +1,25 @@
+import { useState } from 'react';
+
 export default function EditorPersonal({
   onEditPersonalInfo,
   personalInfo,
 }) {
+  const [hidden, setHidden] = useState(true);
+
   return (
     <div className="editor">
       <h2 className="editor-header">Personal</h2>
+
+      <button
+        className="hide-button"
+        type="button"
+        onClick={() => setHidden(!hidden)}
+      >
+        {hidden && ('Edit')}
+        {!hidden && ('Done')}
+      </button>
+
+      {!hidden && (
       <div className="editor-section">
         <label>
           <span>Name: </span>
@@ -51,6 +66,7 @@ export default function EditorPersonal({
           />
         </label>
       </div>
+      )}
 
     </div>
   );

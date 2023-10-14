@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import BulletEditor from './BulletEditor';
 
 export default function EditorExperience({
@@ -7,11 +8,22 @@ export default function EditorExperience({
   onAddExperienceBullet,
   experienceInfo,
 }) {
+  const [hidden, setHidden] = useState(true);
+
   return (
     <div className="editor">
       <h2 className="editor-header">Experience</h2>
 
-      {experienceInfo.map((job) => (
+      <button
+        className="hide-button"
+        type="button"
+        onClick={() => setHidden(!hidden)}
+      >
+        {hidden && ('Edit')}
+        {!hidden && ('Done')}
+      </button>
+
+      {!hidden && experienceInfo.map((job) => (
         <div className="editor-section" key={job.id}>
           <label>
             <span>Position: </span>
@@ -74,12 +86,14 @@ export default function EditorExperience({
         </div>
       ))}
 
+      {!hidden && (
       <button
         type="button"
         onClick={onAddExperience}
       >
         Add Workplace
       </button>
+      )}
     </div>
   );
 }
