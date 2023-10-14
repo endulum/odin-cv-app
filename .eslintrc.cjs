@@ -19,6 +19,7 @@ module.exports = {
     ],
     'react/prop-types': 'warn',
     'react/jsx-no-bind': 'warn',
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    'jsx-a11y/label-has-associated-control': 'off'
   },
 }

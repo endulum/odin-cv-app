@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-import Editor from './components/editor/Editor';
+import EditorPersonal from './components/editor/EditorPersonal';
+import EditorEducation from './components/editor/EditorEducation';
+import EditorExperience from './components/editor/EditorExperience';
+
 import Cv from './components/cv/Cv';
 
 import { personalJakes, educationJakes, experienceJakes } from './Data';
@@ -97,15 +100,26 @@ export default function App() {
 
   return (
     <>
-      <Editor
-        onEditPersonalInfo={handleEditPersonalInfo}
-        onEditEducationInfo={handleEditEducationInfo}
-        onAddEducation={handleAddEducation}
-        onEditExperienceInfo={handleEditExperienceInfo}
-        onAddExperience={handleAddExperience}
-        onEditExperienceBullet={handleEditExperienceBullet}
-        onAddExperienceBullet={handleAddExperienceBullet}
-      />
+      <div className="editors">
+        <EditorPersonal
+          onEditPersonalInfo={handleEditPersonalInfo}
+          personalInfo={personalInfo}
+        />
+
+        <EditorEducation
+          onEditEducationInfo={handleEditEducationInfo}
+          onAddEducation={handleAddEducation}
+          educationInfo={educationInfo}
+        />
+
+        <EditorExperience
+          onEditExperienceInfo={handleEditExperienceInfo}
+          onAddExperience={handleAddExperience}
+          onEditExperienceBullet={handleEditExperienceBullet}
+          onAddExperienceBullet={handleAddExperienceBullet}
+          experienceInfo={experienceInfo}
+        />
+      </div>
 
       <Cv
         personalInfo={personalInfo}
