@@ -65,20 +65,23 @@ export default function App() {
     }]);
   }
 
-  function handleEditExperienceBullet(experienceId, bulletId, text) {
-    if (!text) {
+  function handleEditExperienceBullet(experienceId, bulletId, newText) {
+    if (newText === undefined) {
       setExperienceInfo([...experienceInfo.map((info) => {
         if (info.id === experienceId) {
-          info.bullets.filter((bullet) => bullet.id !== bulletId);
+          return { ...info, bullets: info.bullets.filter((bullet) => bullet.id !== bulletId) };
         } return { ...info };
       })]);
     } else {
       setExperienceInfo([...experienceInfo.map((info) => {
         if (info.id === experienceId) {
-          info.bullets.map((bullet) => {
-            if (bullet.id === bulletId) return { ...bullet, bulletText: text };
-            return { ...bullet };
-          });
+          return {
+            ...info,
+            bullets: info.bullets.map((bullet) => {
+              if (bullet.id === bulletId) return { ...bullet, bulletText: newText };
+              return { ...bullet };
+            }),
+          };
         } return { ...info };
       })]);
     }

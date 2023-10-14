@@ -1,3 +1,5 @@
+import BulletEditor from './BulletEditor';
+
 export default function EditorExperience({
   onEditExperienceInfo,
   onAddExperience,
@@ -55,6 +57,13 @@ export default function EditorExperience({
               onChange={(e) => onEditExperienceInfo(job.id, 'end', e.target.value)}
             />
           </label>
+
+          <BulletEditor
+            jobId={job.id}
+            bulletInfo={job.bullets}
+            onEditBullet={onEditExperienceBullet}
+            onAddBullet={onAddExperienceBullet}
+          />
 
           <button
             type="button"
