@@ -1,14 +1,16 @@
 import StartToEnd from './StartToEnd';
 
 export default function Experience({ details }) {
-  return (
-    <div className="section-experience">
-      <h2 className="header-experience">Experience</h2>
-      <div className="body-experience">
-        {details.map((role) => <Role key={role.id} details={role} />)}
+  if (details.length > 0) {
+    return (
+      <div className="section-experience">
+        <h2 className="header-experience">Experience</h2>
+        <div className="body-experience">
+          {details.map((role) => <Role key={role.id} details={role} />)}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 function Role({ details }) {
@@ -23,7 +25,12 @@ function Role({ details }) {
         <span className="experience-location" style={{ fontWeight: 'normal' }}>{details.location}</span>
       </h4>
       <ul className="experience-bullets">
-        {details.bullets.map((bullet) => <li className="experience-bullet" key={bullet.id}>{bullet.bulletText}</li>)}
+        {details.bullets.map((bullet) => (
+          <li className="experience-bullet" key={bullet.id}>
+            <div className="bullet-point" />
+            {bullet.bulletText}
+          </li>
+        ))}
       </ul>
       <StartToEnd start={details.start} end={details.end} />
     </div>

@@ -1,0 +1,90 @@
+@import url(./fonts/font-handling.css);
+
+#root {
+  gap: 20px;
+}
+
+.cv {
+  width: 8.5in;
+  height: 11.5in;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-personal {
+  color: white;
+  background-color: slategray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 0;
+
+  & .header-personal {
+    font-size: 2.5rem;
+  }
+
+  & .body-personal {
+    display: flex;
+    flex-direction: row;  
+    list-style: none;
+    gap: 2.5rem;
+    padding-top: 0.5rem;
+  }
+}
+
+.section-education, .section-experience {
+  padding: 0 0.5in;
+  padding-top: 1.25rem;
+  font-size: 12pt;
+
+  & .header-education, .header-experience {
+    font-size: 16pt;
+    font-variant: small-caps;
+    border-bottom: 1px solid slategray;
+  }
+
+  & .body-education, .body-experience {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    line-height: 16pt;
+  }
+
+  & .education-details, .experience-details {
+    position: relative;
+  }
+
+  & .education-school, .experience-position {
+    font-size: 12pt;
+  }
+
+  & .experience-bullets {
+    font-size: 11pt;
+    list-style: none;
+
+    & .experience-bullet {
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+      gap: 0.5rem;
+
+      & .bullet-point {
+        min-width: 5px;
+        min-height: 5px;
+        background-color: slategray;
+        margin-top: 5pt;
+      }
+    }
+  }
+}
+
+.start-to-end {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

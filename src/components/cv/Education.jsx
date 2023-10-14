@@ -1,14 +1,16 @@
 import StartToEnd from './StartToEnd';
 
 export default function Education({ details }) {
-  return (
-    <div className="section-education">
-      <h2 className="header-education">Education</h2>
-      <div className="body-education">
-        {details.map((school) => <School key={school.id} details={school} />)}
+  if (details.length > 0) {
+    return (
+      <div className="section-education">
+        <h2 className="header-education">Education</h2>
+        <div className="body-education">
+          {details.map((school) => <School key={school.id} details={school} />)}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 function School({ details }) {

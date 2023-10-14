@@ -12,6 +12,7 @@ import { personalJakes, educationJakes, experienceJakes } from './Data';
 
 import './styles/base.css';
 import './styles/editor.css';
+import './styles/cv.css';
 
 export default function App() {
   const [personalInfo, setPersonalInfo] = useState(personalJakes);
@@ -131,7 +132,7 @@ export default function App() {
         />
       </div>
 
-      <div className="cv">
+      <div className="serif cv">
         <Personal details={personalInfo} />
         <Education details={educationInfo} />
         <Experience details={experienceInfo} />
