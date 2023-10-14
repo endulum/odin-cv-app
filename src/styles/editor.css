@@ -1,4 +1,9 @@
+.editors {
+  width: 300px;
+}
+
 .editor {
+  width: 100%;
   border: 1px solid;
   padding: 1rem;
   display: flex;

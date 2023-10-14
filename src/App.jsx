@@ -4,8 +4,9 @@ import { v4 as uuid } from 'uuid';
 import EditorPersonal from './components/editor/EditorPersonal';
 import EditorEducation from './components/editor/EditorEducation';
 import EditorExperience from './components/editor/EditorExperience';
-
-import Cv from './components/cv/Cv';
+import Personal from './components/cv/Personal';
+import Education from './components/cv/Education';
+import Experience from './components/cv/Experience';
 
 import { personalJakes, educationJakes, experienceJakes } from './Data';
 
@@ -130,11 +131,11 @@ export default function App() {
         />
       </div>
 
-      <Cv
-        personalInfo={personalInfo}
-        educationInfo={educationInfo}
-        experienceInfo={experienceInfo}
-      />
+      <div className="cv">
+        <Personal details={personalInfo} />
+        <Education details={educationInfo} />
+        <Experience details={experienceInfo} />
+      </div>
     </>
   );
 }
