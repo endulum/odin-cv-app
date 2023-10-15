@@ -3,6 +3,7 @@
 }
 
 .editor {
+  position: relative;
   width: 100%;
   border: 1px solid;
   padding: 1rem;
@@ -59,3 +60,64 @@
     }
   }
 }
+
+.icon-button {
+  appearance: none;
+  background: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & svg {
+    transition: color 0.3s ease;
+  }
+
+  &.hide-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    & svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &.hide-button-reveal svg {
+      color: black;
+      &:hover {
+        color: gray;
+      }
+    }
+  
+    &.hide-button-hide svg {
+      color: olivedrab;
+      &:hover {
+        color: yellowgreen;
+      }
+    }
+  }
+
+  &.delete-bullet {
+    color: darkred;
+    &:hover {
+      color: crimson;
+    }
+  }
+}
+
+/* .hide-button {
+  
+  appearance: none;
+  background: transparent;
+  border: none;
+  
+  
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  
+} */

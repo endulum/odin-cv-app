@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 export default function EditorPersonal({
   onEditPersonalInfo,
@@ -11,12 +12,13 @@ export default function EditorPersonal({
       <h2 className="editor-header">Personal</h2>
 
       <button
-        className="hide-button"
+        className={`icon-button hide-button ${hidden ? 'hide-button-reveal' : 'hide-button-hide'}`}
         type="button"
         onClick={() => setHidden(!hidden)}
+        title={hidden ? 'Edit Education Details' : 'Done Editing Education Details'}
       >
-        {hidden && ('Edit')}
-        {!hidden && ('Done')}
+        {hidden && (<span><i className="fa-solid fa-pen-nib" /></span>)}
+        {!hidden && (<span><i className="fa-solid fa-circle-check" /></span>)}
       </button>
 
       {!hidden && (

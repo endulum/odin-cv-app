@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import '@fortawesome/fontawesome-free/js/all.js';
+
 import BulletEditor from './BulletEditor';
 
 export default function EditorExperience({
@@ -15,12 +17,13 @@ export default function EditorExperience({
       <h2 className="editor-header">Experience</h2>
 
       <button
-        className="hide-button"
+        className={`icon-button hide-button ${hidden ? 'hide-button-reveal' : 'hide-button-hide'}`}
         type="button"
         onClick={() => setHidden(!hidden)}
+        title={hidden ? 'Edit Education Details' : 'Done Editing Education Details'}
       >
-        {hidden && ('Edit')}
-        {!hidden && ('Done')}
+        {hidden && (<span><i className="fa-solid fa-pen-nib" /></span>)}
+        {!hidden && (<span><i className="fa-solid fa-circle-check" /></span>)}
       </button>
 
       {!hidden && experienceInfo.map((job) => (

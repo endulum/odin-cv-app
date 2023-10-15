@@ -31,6 +31,10 @@
     gap: 2.5rem;
     padding-top: 0.25rem;
   }
+
+  & svg {
+    padding-right: 0.5rem;
+  }
 }
 
 .section-education, .section-experience {

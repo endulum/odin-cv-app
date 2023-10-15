@@ -1,3 +1,5 @@
+import '@fortawesome/fontawesome-free/js/all.js';
+
 export default function BulletEditor({
   jobId,
   bulletInfo,
@@ -16,9 +18,11 @@ export default function BulletEditor({
 
           <button
             type="button"
+            className="icon-button delete-bullet"
+            title="Delete This Bullet"
             onClick={() => onEditBullet(jobId, bullet.id, undefined)}
           >
-            Remove
+            <span><i className="fa-solid fa-delete-left" /></span>
           </button>
         </li>
       ))}
