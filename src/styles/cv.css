@@ -37,17 +37,17 @@
   }
 }
 
-.section-education, .section-experience {
+.section-education, .section-experience, .section-projects {
   padding: 0 0.5in;
   padding-top: 1.25rem;
   font-size: 12pt;
 
-  & .header-education, .header-experience {
+  & .header-education, .header-experience, .header-projects {
     font-size: 16pt;
     font-variant: small-caps;
   }
 
-  & .body-education, .body-experience {
+  & .body-education, .body-experience, .body-projects {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -55,19 +55,19 @@
     line-height: 16pt;
   }
 
-  & .education-details, .experience-details {
+  & .education-details, .experience-details, .project-details {
     position: relative;
   }
 
-  & .education-school, .experience-position {
+  & .education-school, .experience-position, .project-title {
     font-size: 12pt;
   }
 
-  & .experience-bullets {
+  & .experience-bullets, .project-bullets {
     font-size: 11pt;
     list-style: none;
 
-    & .experience-bullet {
+    & .experience-bullet, .project-bullet {
       padding-left: 1rem;
       display: flex;
       flex-direction: row;

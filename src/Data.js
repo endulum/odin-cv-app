@@ -113,3 +113,49 @@ export const experienceJakes = [
 // id: uuid(),
 // bulletText: '',
 // };
+
+export const projectsJakes = [
+  {
+    id: uuid(),
+    title: 'Gitlytics',
+    techStack: 'Python, Flask, React, PostgreSQL, Docker',
+    start: '2020-06',
+    end: '',
+    bullets: [
+      {
+        id: uuid(),
+        bulletText: 'Developed a full-stack web application using with Flask serving a REST API with React as the frontend',
+      }, {
+        id: uuid(),
+        bulletText: 'Implemented GitHub OAuth to get data from user\'s repositories',
+      }, {
+        id: uuid(),
+        bulletText: 'Visualized GitHub data to show collaboration',
+      }, {
+        id: uuid(),
+        bulletText: 'Used Celery and Redis for asynchronous tasks',
+      },
+    ],
+  }, {
+    id: uuid(),
+    title: 'Simple Paintball',
+    techStack: 'Spigot API, Java, Maven, TravisCI, Git',
+    start: '2018-05',
+    end: '2020-05',
+    bullets: [
+      {
+        id: uuid(),
+        bulletText: 'Developed a Minecraft server plugin to entertain kids during free time for a previous job',
+      }, {
+        id: uuid(),
+        bulletText: 'Published plugin to websites gaining 2K+ downloads and an average 4.5/5 star review',
+      }, {
+        id: uuid(),
+        bulletText: 'Implemented continuous delivery using TravisCI to build the plugin upon a new release',
+      }, {
+        id: uuid(),
+        bulletText: 'Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin',
+      },
+    ],
+  },
+];

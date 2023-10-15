@@ -1,7 +1,7 @@
 import '@fortawesome/fontawesome-free/js/all.js';
 
 export default function BulletEditor({
-  jobId,
+  sectionId,
   bulletInfo,
   onEditBullet,
   onAddBullet,
@@ -13,14 +13,14 @@ export default function BulletEditor({
           <input
             type="text"
             value={bullet.bulletText}
-            onChange={(e) => onEditBullet(jobId, bullet.id, e.target.value)}
+            onChange={(e) => onEditBullet(sectionId, bullet.id, e.target.value)}
           />
 
           <button
             type="button"
             className="icon-button delete-bullet"
             title="Delete This Bullet"
-            onClick={() => onEditBullet(jobId, bullet.id, undefined)}
+            onClick={() => onEditBullet(sectionId, bullet.id, undefined)}
           >
             <span><i className="fa-solid fa-delete-left" /></span>
           </button>
@@ -30,7 +30,7 @@ export default function BulletEditor({
       <li>
         <button
           type="button"
-          onClick={() => onAddBullet(jobId)}
+          onClick={() => onAddBullet(sectionId)}
         >
           Add Bullet
         </button>

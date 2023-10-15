@@ -36,11 +36,11 @@
 .serif {
   font-family: 'CM Serif Roman';
 
-  & .education-location, .experience-location {
+  & .education-location, .experience-location, .project-techstack {
     font-family: 'CM Serif Oblique';
   }
 
-  & .section-personal, .education-school, .experience-position {
+  & .section-personal, .education-school, .experience-position, .project-title {
     font-family: 'CM Serif Bold';
   }
 }
@@ -48,11 +48,11 @@
 .sans-serif {
   font-family: 'CM Sans';
 
-  & .education-location, .experience-location {
+  & .education-location, .experience-location, .project-techstack {
     font-family: 'CM Sans Oblique';
   }
 
-  & .section-personal, .education-school, .experience-position {
+  & .section-personal, .education-school, .experience-position, .project-title {
     font-family: 'CM Sans Bold';
   }
 }
