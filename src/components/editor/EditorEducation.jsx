@@ -13,13 +13,13 @@ export default function EditorEducation({
       <h2 className="editor-header">Education</h2>
 
       <button
-        className={`icon-button hide-button ${hidden ? 'hide-button-reveal' : 'hide-button-hide'}`}
+        className={`editor-button button-neutral ${hidden ? 'editor-button-show' : 'editor-button-hide'}`}
         type="button"
         onClick={() => setHidden(!hidden)}
         title={hidden ? 'Edit Education Details' : 'Done Editing Education Details'}
       >
-        {hidden && (<span><i className="fa-solid fa-pen-nib" /></span>)}
-        {!hidden && (<span><i className="fa-solid fa-circle-check" /></span>)}
+        {hidden && ('Edit')}
+        {!hidden && ('Close')}
       </button>
 
       {!hidden && educationInfo.map((school) => (
@@ -72,6 +72,7 @@ export default function EditorEducation({
 
           <button
             type="button"
+            className="editor-button button-delete"
             onClick={() => onEditEducationInfo(school.id)}
           >
             Delete School
@@ -82,6 +83,7 @@ export default function EditorEducation({
       {!hidden && (
       <button
         type="button"
+        className="editor-button button-add"
         onClick={onAddEducation}
       >
         Add School

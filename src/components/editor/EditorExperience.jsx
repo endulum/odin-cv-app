@@ -17,13 +17,13 @@ export default function EditorExperience({
       <h2 className="editor-header">Experience</h2>
 
       <button
-        className={`icon-button hide-button ${hidden ? 'hide-button-reveal' : 'hide-button-hide'}`}
+        className={`editor-button button-neutral ${hidden ? 'editor-button-show' : 'editor-button-hide'}`}
         type="button"
         onClick={() => setHidden(!hidden)}
-        title={hidden ? 'Edit Education Details' : 'Done Editing Education Details'}
+        title={hidden ? 'Edit Experience Details' : 'Done Editing Experience Details'}
       >
-        {hidden && (<span><i className="fa-solid fa-pen-nib" /></span>)}
-        {!hidden && (<span><i className="fa-solid fa-circle-check" /></span>)}
+        {hidden && ('Edit')}
+        {!hidden && ('Close')}
       </button>
 
       {!hidden && experienceInfo.map((job) => (
@@ -74,7 +74,7 @@ export default function EditorExperience({
           </label>
 
           <BulletEditor
-            jobId={job.id}
+            sectionId={job.id}
             bulletInfo={job.bullets}
             onEditBullet={onEditExperienceBullet}
             onAddBullet={onAddExperienceBullet}
@@ -82,6 +82,7 @@ export default function EditorExperience({
 
           <button
             type="button"
+            className="editor-button button-delete"
             onClick={() => onEditExperienceInfo(job.id, null, null)}
           >
             Delete Workplace
@@ -92,6 +93,7 @@ export default function EditorExperience({
       {!hidden && (
       <button
         type="button"
+        className="editor-button button-add"
         onClick={onAddExperience}
       >
         Add Workplace

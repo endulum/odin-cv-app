@@ -2,6 +2,7 @@
   width: 100%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 1200px) {
@@ -20,20 +21,24 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 
   & .editor-header {
+    width: 100%;
+    text-align: left;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.125);
   }
 
   & .editor-section {
     width: 100%;
-    border: 1px dashed rgba(0,0,0,0.25);
+    border: 1px dotted rgba(0,0,0,0.25);
     padding: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.75rem;
 
     & label {
@@ -59,11 +64,13 @@
     list-style: none;
     display: flex;
     flex-direction: column;
+    align-items: end;
     gap: 0.25rem;
 
     & .bullet {
       display: flex;
       flex-direction: row;
+      width: 100%;
       gap: 0.25rem;
 
       & input {
@@ -75,65 +82,61 @@
       }
     }
   }
+
+  & input {
+    padding: 0.375rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    font-family: monospace;
+    font-size: 0.75rem;
+  }
 }
 
-.icon-button {
+.editor-button {
   appearance: none;
-  background: transparent;
-  border: none;
+  border: 1px solid;
+  border-radius: 5px;
+  width: max-content;
+  max-width: max-content;
+  padding: 0.375rem 1rem;
+  color: white;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+  box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
 
-  &:hover {
-    cursor: pointer;
-  }
-
-  & svg {
-    transition: color 0.3s ease;
-  }
-
-  &.hide-button {
+  &.editor-button-hide, &.editor-button-show {
     position: absolute;
-    right: 1rem;
     top: 1rem;
-
-    & svg {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-
-    &.hide-button-reveal svg {
-      color: black;
-      &:hover {
-        color: gray;
-      }
-    }
-  
-    &.hide-button-hide svg {
-      color: olivedrab;
-      &:hover {
-        color: yellowgreen;
-      }
-    }
+    right: 1rem;
   }
 
-  &.delete-bullet {
-    color: darkred;
-    &:hover {
-      color: crimson;
-    }
+  &.button-neutral {
+    background-color: gray;
+    border-color: gray;
   }
-}
 
-/* .hide-button {
-  
-  appearance: none;
-  background: transparent;
-  border: none;
-  
-  
+  &.button-delete {
+    background-color: firebrick;
+    border-color: firebrick;
+  }
+
+  &.button-add {
+    background-color: olivedrab;
+    border-color: olivedrab;
+  }
+
+  &.small-button {
+    padding: 0.375rem 0.5rem;
+    min-width: 2rem;
+  }
 
   &:hover {
     cursor: pointer;
+    box-shadow: none;
   }
 
-  
-} */
+  &:active {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+  }
+}

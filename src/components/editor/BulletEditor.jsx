@@ -18,11 +18,11 @@ export default function BulletEditor({
 
           <button
             type="button"
-            className="icon-button delete-bullet"
+            className="editor-button button-delete small-button"
             title="Delete This Bullet"
             onClick={() => onEditBullet(sectionId, bullet.id, undefined)}
           >
-            <span><i className="fa-solid fa-delete-left" /></span>
+            <i className="fa-solid fa-trash" />
           </button>
         </li>
       ))}
@@ -30,9 +30,11 @@ export default function BulletEditor({
       <li>
         <button
           type="button"
+          className="editor-button button-add small-button"
+          title="Add Bullet"
           onClick={() => onAddBullet(sectionId)}
         >
-          Add Bullet
+          <i className="fa-solid fa-circle-plus" />
         </button>
       </li>
     </ul>

@@ -17,13 +17,13 @@ export default function EdtiroProjects({
       <h2 className="editor-header">Projects</h2>
 
       <button
-        className={`icon-button hide-button ${hidden ? 'hide-button-reveal' : 'hide-button-hide'}`}
+        className={`editor-button button-neutral ${hidden ? 'editor-button-show' : 'editor-button-hide'}`}
         type="button"
         onClick={() => setHidden(!hidden)}
-        title={hidden ? 'Edit Education Details' : 'Done Editing Education Details'}
+        title={hidden ? 'Edit Project Details' : 'Done Editing Project Details'}
       >
-        {hidden && (<span><i className="fa-solid fa-pen-nib" /></span>)}
-        {!hidden && (<span><i className="fa-solid fa-circle-check" /></span>)}
+        {hidden && ('Edit')}
+        {!hidden && ('Close')}
       </button>
 
       {!hidden && ProjectInfo.map((project) => (
@@ -73,6 +73,7 @@ export default function EdtiroProjects({
 
           <button
             type="button"
+            className="editor-button button-delete"
             onClick={() => onEditProjectInfo(project.id, null, null)}
           >
             Delete Project
@@ -83,6 +84,7 @@ export default function EdtiroProjects({
       {!hidden && (
       <button
         type="button"
+        className="editor-button button-add"
         onClick={onAddProject}
       >
         Add Project
