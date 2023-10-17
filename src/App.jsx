@@ -224,9 +224,11 @@ export default function App() {
 
       <div className={`${font} cv`}>
         <Personal details={personalInfo} color={color} />
-        <Education details={educationInfo} color={color} />
-        <Experience details={experienceInfo} color={color} />
-        <Projects details={projectInfo} color={color} />
+        <div className="cv-body">
+          <Education details={educationInfo} color={color} />
+          <Experience details={experienceInfo} color={color} />
+          <Projects details={projectInfo} color={color} />
+        </div>
       </div>
     </>
   );

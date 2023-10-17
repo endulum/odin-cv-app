@@ -1,15 +1,18 @@
 @import url(./fonts/font-handling.css);
 
-#root {
-  gap: 20px;
-}
-
 .cv {
+  background-color: white;
   width: 8.5in;
+  min-width: 8.5in;
   height: 11.5in;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+  min-height: 11.5in;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
   display: flex;
   flex-direction: column;
+
+  & .cv-body {
+    padding-top: 1.25rem;
+  }
 }
 
 .section-personal {
@@ -39,7 +42,6 @@
 
 .section-education, .section-experience, .section-projects {
   padding: 0 0.5in;
-  padding-top: 1.25rem;
   font-size: 12pt;
 
   & .header-education, .header-experience, .header-projects {
@@ -48,10 +50,11 @@
   }
 
   & .body-education, .body-experience, .body-projects {
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding-top: 0.5rem;
     line-height: 16pt;
   }
 
