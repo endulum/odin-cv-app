@@ -187,6 +187,40 @@ export default function App() {
   return (
     <>
       <div className="editors">
+        <div className="editor-top">
+          <button
+            type="button"
+            className="editor-button button-neutral"
+            onClick={() => {
+              setPersonalInfo(personalJakes);
+              setEducationInfo(educationJakes);
+              setExperienceInfo(experienceJakes);
+              setProjectInfo(projectsJakes);
+            }}
+          >
+            Reset CV to Default Data
+
+          </button>
+          <button
+            type="button"
+            className="editor-button button-delete"
+            onClick={() => {
+              setPersonalInfo({
+                name: '',
+                tel: '',
+                email: '',
+                linkedIn: '',
+                gitHub: '',
+              });
+              setEducationInfo([]);
+              setExperienceInfo([]);
+              setProjectInfo([]);
+            }}
+          >
+            Empty All CV Data
+
+          </button>
+        </div>
         <DesignEditor
           onEditColor={handleEditColor}
           onEditFont={handleEditFont}
