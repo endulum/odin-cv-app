@@ -88,9 +88,6 @@ export const experienceJakes = [
       bulletText: 'Contributed 50K+ lines of code to an established codebase via Git',
     }, {
       id: uuid(),
-      bulletText: 'Conducted a human subject study to determine which video game dungeon generation technique is enjoyable',
-    }, {
-      id: uuid(),
       bulletText: 'Wrote an 8+ page paper and gave multiple presentations on-campus',
     }, {
       id: uuid(),
@@ -156,6 +153,52 @@ export const projectsJakes = [
         id: uuid(),
         bulletText: 'Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin',
       },
+    ],
+  },
+];
+
+export const skillsJakes = [
+  {
+    stackName: 'Languages',
+    stack: [
+      { id: uuid(), skill: 'Java' },
+      { id: uuid(), skill: 'Python' },
+      { id: uuid(), skill: 'C/C++' },
+      { id: uuid(), skill: 'SQL (Postgres)' },
+      { id: uuid(), skill: 'JavaScript' },
+      { id: uuid(), skill: 'HTML/CSS' },
+      { id: uuid(), skill: 'R' },
+    ],
+  }, {
+    stackName: 'Frameworks',
+    stack: [
+      { id: uuid(), skill: 'React' },
+      { id: uuid(), skill: 'Node.js' },
+      { id: uuid(), skill: 'Flask' },
+      { id: uuid(), skill: 'JUnit' },
+      { id: uuid(), skill: 'Wordpress' },
+      { id: uuid(), skill: 'Material-UI' },
+      { id: uuid(), skill: 'FastAPI' },
+    ],
+  }, {
+    stackName: 'Developer Tools',
+    stack: [
+      { id: uuid(), skill: 'Git' },
+      { id: uuid(), skill: 'Docker' },
+      { id: uuid(), skill: 'TravisCI' },
+      { id: uuid(), skill: 'Google Cloud Platform' },
+      { id: uuid(), skill: 'VSCode' },
+      { id: uuid(), skill: 'Visual Studio' },
+      { id: uuid(), skill: 'PyCharm' },
+      { id: uuid(), skill: 'IntelliJ' },
+      { id: uuid(), skill: 'Eclipse' },
+    ],
+  }, {
+    stackName: 'Libraries',
+    stack: [
+      { id: uuid(), skill: 'pandas' },
+      { id: uuid(), skill: 'NumPy' },
+      { id: uuid(), skill: 'Matplotlib' },
     ],
   },
 ];

@@ -12,7 +12,7 @@ import Experience from './components/cv/Experience';
 import Projects from './components/cv/Projects';
 
 import {
-  personalJakes, educationJakes, experienceJakes, projectsJakes,
+  personalJakes, educationJakes, experienceJakes, projectsJakes, skillsJakes,
 } from './Data';
 
 import './styles/base.css';
@@ -24,6 +24,7 @@ export default function App() {
   const [educationInfo, setEducationInfo] = useState(educationJakes);
   const [experienceInfo, setExperienceInfo] = useState(experienceJakes);
   const [projectInfo, setProjectInfo] = useState(projectsJakes);
+  const [skillInfo, setSkillInfo] = useState(skillsJakes);
 
   function handleEditPersonalInfo(property, value) {
     setPersonalInfo({ ...personalInfo, [property]: value });
