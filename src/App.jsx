@@ -179,6 +179,71 @@ export default function App() {
     })]);
   }
 
+  // change or delete a skill stack
+  function handleEditSkillStack(id, newText) {
+    if (!newText) {
+      setSkillInfo([...skillInfo.filter((stack) => stack.id !== id)]);
+    } else {
+      setSkillInfo([...skillInfo.map((stack) => {
+        if (stack.id === id) return { ...stack, stackName: newText };
+        return { ...stack };
+      })]);
+    }
+  }
+
+  // add a skill stack
+  function handleAddSkillStack() {
+    setSkillInfo([...skillInfo, {
+      id: uuid(),
+      stackName: '(name of skill stack)',
+      skills: [
+        {
+          id: uuid(),
+          skill: '(skill)',
+        },
+      ],
+    }]);
+  }
+
+  // change or edit a skill stack skill
+  function handleEditSkill(skillStackId, skillId, newText) {
+    if (newText === undefined) {
+      setSkillInfo([...skillInfo.map((skillStack) => {
+        if (skillStack.id === skillStackId) {
+          return { ...skillStack.filter((skill) => skill.id !== skillId) };
+        } return { ...skillStack };
+      })]);
+    } else {
+      setSkillInfo([...skillInfo.map((skillStack) => {
+        if (skillStack.id === skillStackId) {
+          return {
+            ...skillStack.map((skillItem) => {
+              if (skillItem.id === skillId) return { ...skillItem, skill: newText };
+              return { ...skillItem };
+            }),
+          };
+        } return { ...skillStack };
+      })]);
+    }
+  }
+
+  // add a skill stack skill
+  function handleAddSkill(skillStackId) {
+    setSkillInfo([...skillInfo.map((skillStack) => {
+      if (skillStack.id === skillStackId) {
+        return {
+          ...skillStack,
+          skills: [
+            [...skillStack.skills, {
+              id: uuid(),
+              skill: '',
+            }],
+          ],
+        };
+      } return { ...skillStack };
+    })]);
+  }
+
   const [color, setColor] = useState('#5F9EA0');
   const [font, setFont] = useState('serif');
 

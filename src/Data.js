@@ -159,6 +159,7 @@ export const projectsJakes = [
 
 export const skillsJakes = [
   {
+    id: uuid(),
     stackName: 'Languages',
     stack: [
       { id: uuid(), skill: 'Java' },
@@ -170,6 +171,7 @@ export const skillsJakes = [
       { id: uuid(), skill: 'R' },
     ],
   }, {
+    id: uuid(),
     stackName: 'Frameworks',
     stack: [
       { id: uuid(), skill: 'React' },
@@ -181,6 +183,7 @@ export const skillsJakes = [
       { id: uuid(), skill: 'FastAPI' },
     ],
   }, {
+    id: uuid(),
     stackName: 'Developer Tools',
     stack: [
       { id: uuid(), skill: 'Git' },
@@ -194,6 +197,7 @@ export const skillsJakes = [
       { id: uuid(), skill: 'Eclipse' },
     ],
   }, {
+    id: uuid(),
     stackName: 'Libraries',
     stack: [
       { id: uuid(), skill: 'pandas' },
