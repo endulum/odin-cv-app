@@ -40,7 +40,7 @@
     font-family: 'CM Serif Oblique';
   }
 
-  & .section-personal, .education-school, .experience-position, .project-title {
+  & .section-personal, .education-school, .experience-position, .project-title, .skillset-title{
     font-family: 'CM Serif Bold';
   }
 }
@@ -52,7 +52,7 @@
     font-family: 'CM Sans Oblique';
   }
 
-  & .section-personal, .education-school, .experience-position, .project-title {
+  & .section-personal, .education-school, .experience-position, .project-title, .skillset-title {
     font-family: 'CM Sans Bold';
   }
 }

@@ -26,15 +26,6 @@ export const educationJakes = [
   },
 ];
 
-// export const educationEmpty = {
-//   id: uuid(),
-//   school: '(school or institution name)',
-//   degree: '(degree or certification of study)',
-//   location: '(location of school or institution)',
-//   start: '',
-//   end: '',
-// };
-
 export const experienceJakes = [
   {
     id: uuid(),
@@ -88,28 +79,10 @@ export const experienceJakes = [
       bulletText: 'Contributed 50K+ lines of code to an established codebase via Git',
     }, {
       id: uuid(),
-      bulletText: 'Wrote an 8+ page paper and gave multiple presentations on-campus',
-    }, {
-      id: uuid(),
       bulletText: 'Presented virtually to the World Conference on Computational Intelligence',
     }],
   },
 ];
-
-// export const experienceEmpty = {
-//   id: uuid(),
-//   position: 'name of work position',
-//   company: 'name of company',
-//   location: 'location of work',
-//   start: '',
-//   end: '',
-//   bullets: [],
-// };
-
-// export const bulletEmpty = {
-// id: uuid(),
-// bulletText: '',
-// };
 
 export const projectsJakes = [
   {
@@ -157,56 +130,6 @@ export const projectsJakes = [
   },
 ];
 
-// export const skillsJakes = [
-//   {
-//     id: uuid(),
-//     stackName: 'Languages',
-//     stack: [
-//       { id: uuid(), bulletText: 'Java' },
-//       { id: uuid(), bulletText: 'Python' },
-//       { id: uuid(), bulletText: 'C/C++' },
-//       { id: uuid(), bulletText: 'SQL (Postgres)' },
-//       { id: uuid(), bulletText: 'JavaScript' },
-//       { id: uuid(), bulletText: 'HTML/CSS' },
-//       { id: uuid(), bulletText: 'R' },
-//     ],
-//   }, {
-//     id: uuid(),
-//     stackName: 'Frameworks',
-//     stack: [
-//       { id: uuid(), bulletText: 'React' },
-//       { id: uuid(), bulletText: 'Node.js' },
-//       { id: uuid(), bulletText: 'Flask' },
-//       { id: uuid(), bulletText: 'JUnit' },
-//       { id: uuid(), bulletText: 'Wordpress' },
-//       { id: uuid(), bulletText: 'Material-UI' },
-//       { id: uuid(), bulletText: 'FastAPI' },
-//     ],
-//   }, {
-//     id: uuid(),
-//     stackName: 'Developer Tools',
-//     stack: [
-//       { id: uuid(), bulletText: 'Git' },
-//       { id: uuid(), bulletText: 'Docker' },
-//       { id: uuid(), bulletText: 'TravisCI' },
-//       { id: uuid(), bulletText: 'Google Cloud Platform' },
-//       { id: uuid(), bulletText: 'VSCode' },
-//       { id: uuid(), bulletText: 'Visual Studio' },
-//       { id: uuid(), bulletText: 'PyCharm' },
-//       { id: uuid(), bulletText: 'IntelliJ' },
-//       { id: uuid(), bulletText: 'Eclipse' },
-//     ],
-//   }, {
-//     id: uuid(),
-//     stackName: 'Libraries',
-//     stack: [
-//       { id: uuid(), bulletText: 'pandas' },
-//       { id: uuid(), bulletText: 'NumPy' },
-//       { id: uuid(), bulletText: 'Matplotlib' },
-//     ],
-//   },
-// ];
-
 export const skillsJakes = [
   {
     id: uuid(),
@@ -219,7 +142,7 @@ export const skillsJakes = [
   }, {
     id: uuid(),
     title: 'Developer Tools',
-    skills: 'Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse',
+    skills: 'Git, Docker, TravisCI, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse',
   }, {
     id: uuid(),
     title: 'Libraries',

@@ -11,6 +11,7 @@ import Personal from './components/cv/Personal';
 import Education from './components/cv/Education';
 import Experience from './components/cv/Experience';
 import Projects from './components/cv/Projects';
+import Skills from './components/cv/Skills';
 
 import {
   personalJakes, educationJakes, experienceJakes, projectsJakes, skillsJakes,
@@ -180,71 +181,6 @@ export default function App() {
     })]);
   }
 
-  // // change or delete a skill stack
-  // function handleEditSkillStack(id, newText) {
-  //   if (!newText) {
-  //     setSkillInfo([...skillInfo.filter((stack) => stack.id !== id)]);
-  //   } else {
-  //     setSkillInfo([...skillInfo.map((stack) => {
-  //       if (stack.id === id) return { ...stack, stackName: newText };
-  //       return { ...stack };
-  //     })]);
-  //   }
-  // }
-
-  // // add a skill stack
-  // function handleAddSkillStack() {
-  //   setSkillInfo([...skillInfo, {
-  //     id: uuid(),
-  //     stackName: '(name of skill stack)',
-  //     stack: [
-  //       {
-  //         id: uuid(),
-  //         bulletText: '(skill)',
-  //       },
-  //     ],
-  //   }]);
-  // }
-
-  // // change or edit a skill stack skill
-  // function handleEditSkill(skillStackId, skillId, newText) {
-  //   if (newText === undefined) {
-  //     setSkillInfo([...skillInfo.map((skillStack) => {
-  //       if (skillStack.id === skillStackId) {
-  //         return { ...skillStack, stack: skillStack.stack.filter((skill) => skill.id !== skillId) };
-  //       } return { ...skillStack };
-  //     })]);
-  //   } else {
-  //     setSkillInfo([...skillInfo.map((skillStack) => {
-  //       if (skillStack.id === skillStackId) {
-  //         return {
-  //           ...skillStack,
-  //           stack: skillStack.stack.map((skillItem) => {
-  //             if (skillItem.id === skillId) return { ...skillItem, bulletText: newText };
-  //             return { ...skillItem };
-  //           }),
-  //         };
-  //       } return { ...skillStack };
-  //     })]);
-  //   }
-  // }
-
-  // // add a skill stack skill
-  // function handleAddSkill(skillStackId) {
-  //   setSkillInfo([...skillInfo.map((skillStack) => {
-  //     if (skillStack.id === skillStackId) {
-  //       return {
-  //         ...skillStack,
-  //         stack: [...skillStack.stack, {
-  //           id: uuid(),
-  //           bulletText: '',
-  //         }],
-  //       };
-  //     } return { ...skillStack };
-  //   })]);
-  // }
-
-  // change or delete a skillset
   function handleEditSkillset(skillsetId, property, value) {
     if (!value) {
       setSkillInfo([...skillInfo.filter((skillset) => skillset.id !== skillsetId)]);
@@ -256,7 +192,6 @@ export default function App() {
     }
   }
 
-  // add a skillset
   function handleAddSkillset() {
     setSkillInfo([...skillInfo, {
       id: uuid(),
@@ -283,6 +218,7 @@ export default function App() {
               setEducationInfo(educationJakes);
               setExperienceInfo(experienceJakes);
               setProjectInfo(projectsJakes);
+              setSkillInfo(skillsJakes);
             }}
           >
             Reset CV to Default Data
@@ -302,6 +238,7 @@ export default function App() {
               setEducationInfo([]);
               setExperienceInfo([]);
               setProjectInfo([]);
+              setSkillInfo([]);
             }}
           >
             Empty All CV Data
@@ -347,14 +284,6 @@ export default function App() {
           onAddSkillset={handleAddSkillset}
           skillInfo={skillInfo}
         />
-
-        {/* <EditorSkills
-          onEditSkillStack={handleEditSkillStack}
-          onAddSkillStack={handleAddSkillStack}
-          onEditSkill={handleEditSkill}
-          onAddSkill={handleAddSkill}
-          skillInfo={skillInfo}
-        /> */}
       </div>
 
       <div className={`${font} cv`}>
@@ -363,6 +292,7 @@ export default function App() {
           <Education details={educationInfo} color={color} />
           <Experience details={experienceInfo} color={color} />
           <Projects details={projectInfo} color={color} />
+          <Skills details={skillInfo} color={color} />
         </div>
       </div>
     </>

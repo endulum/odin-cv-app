@@ -40,11 +40,11 @@
   }
 }
 
-.section-education, .section-experience, .section-projects {
+.section-education, .section-experience, .section-projects, .section-skills {
   padding: 0 0.5in;
   font-size: 12pt;
 
-  & .header-education, .header-experience, .header-projects {
+  & .header-education, .header-experience, .header-projects, .header-skills {
     font-size: 16pt;
     font-variant: small-caps;
   }
@@ -56,6 +56,11 @@
     flex-direction: column;
     gap: 0.5rem;
     line-height: 16pt;
+  }
+
+  & .body-skills {
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
   }
 
   & .education-details, .experience-details, .project-details {
