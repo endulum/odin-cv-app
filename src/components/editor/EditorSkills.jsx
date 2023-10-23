@@ -3,10 +3,8 @@ import '@fortawesome/fontawesome-free/js/all.js';
 import BulletEditor from './BulletEditor';
 
 export default function EditorSkills({
-  onEditSkillStack,
-  onAddSkillStack,
-  onEditSkill,
-  onAddSkill,
+  onEditSkillset,
+  onAddSkillset,
   skillInfo,
 }) {
   const [hidden, setHidden] = useState(true);
@@ -28,25 +26,27 @@ export default function EditorSkills({
       {!hidden && skillInfo.map((skillStack) => (
         <div className="editor-section" key={skillStack.id}>
           <label>
-            <span>Skillset Name: </span>
+            <span>Skillset Title: </span>
             <input
               type="text"
-              value={skillStack.stackName}
-              onChange={(e) => onEditSkillStack(skillStack.id, e.target.value)}
+              value={skillStack.title}
+              onChange={(e) => onEditSkillset(skillStack.id, 'title', e.target.value)}
             />
           </label>
 
-          <BulletEditor
-            sectionId={skillStack.id}
-            bulletInfo={skillStack.stack}
-            onEditBullet={onEditSkill}
-            onAddBullet={onAddSkill}
-          />
+          <label>
+            <span>Skills:</span>
+            <textarea
+              rows="3"
+              value={skillStack.skills}
+              onChange={(e) => onEditSkillset(skillStack.id, 'skills', e.target.value)}
+            />
+          </label>
 
           <button
             type="button"
             className="editor-button button-delete"
-            onClick={() => onEditSkillStack(skillStack.id, null, null)}
+            onClick={() => onEditSkillset(skillStack.id, null, null)}
           >
             Delete Skillset
           </button>
@@ -57,7 +57,7 @@ export default function EditorSkills({
       <button
         type="button"
         className="editor-button button-add"
-        onClick={onAddSkillStack}
+        onClick={onAddSkillset}
       >
         Add Skillset
       </button>
