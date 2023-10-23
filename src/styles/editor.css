@@ -99,6 +99,29 @@
     font-family: monospace;
     font-size: 0.75rem;
   }
+
+  & .row {
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted rgba(0,0,0,0.25);
+    & span {
+      font-weight: bold;
+    }
+    & .font-style {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      & label {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+      }
+    }
+  }
 }
 
 .editor-button {
@@ -148,4 +171,12 @@
   &:active {
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
   }
+}
+
+input[type="color"] {
+  padding: 0;
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
 }
