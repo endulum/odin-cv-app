@@ -6,6 +6,7 @@ import EditorPersonal from './components/editor/EditorPersonal';
 import EditorEducation from './components/editor/EditorEducation';
 import EditorExperience from './components/editor/EditorExperience';
 import EditorProjects from './components/editor/EditorProjects';
+import EditorSkills from './components/editor/EditorSkills';
 import Personal from './components/cv/Personal';
 import Education from './components/cv/Education';
 import Experience from './components/cv/Experience';
@@ -196,10 +197,10 @@ export default function App() {
     setSkillInfo([...skillInfo, {
       id: uuid(),
       stackName: '(name of skill stack)',
-      skills: [
+      stack: [
         {
           id: uuid(),
-          skill: '(skill)',
+          bulletText: '(skill)',
         },
       ],
     }]);
@@ -210,15 +211,16 @@ export default function App() {
     if (newText === undefined) {
       setSkillInfo([...skillInfo.map((skillStack) => {
         if (skillStack.id === skillStackId) {
-          return { ...skillStack.filter((skill) => skill.id !== skillId) };
+          return { ...skillStack, stack: skillStack.stack.filter((skill) => skill.id !== skillId) };
         } return { ...skillStack };
       })]);
     } else {
       setSkillInfo([...skillInfo.map((skillStack) => {
         if (skillStack.id === skillStackId) {
           return {
-            ...skillStack.map((skillItem) => {
-              if (skillItem.id === skillId) return { ...skillItem, skill: newText };
+            ...skillStack,
+            stack: skillStack.stack.map((skillItem) => {
+              if (skillItem.id === skillId) return { ...skillItem, bulletText: newText };
               return { ...skillItem };
             }),
           };
@@ -233,12 +235,10 @@ export default function App() {
       if (skillStack.id === skillStackId) {
         return {
           ...skillStack,
-          skills: [
-            [...skillStack.skills, {
-              id: uuid(),
-              skill: '',
-            }],
-          ],
+          stack: [...skillStack.stack, {
+            id: uuid(),
+            bulletText: '',
+          }],
         };
       } return { ...skillStack };
     })]);
@@ -319,6 +319,14 @@ export default function App() {
           onEditProjectBullet={handleEditProjectBullet}
           onAddProjectBullet={handleAddProjectBullet}
           ProjectInfo={projectInfo}
+        />
+
+        <EditorSkills
+          onEditSkillStack={handleEditSkillStack}
+          onAddSkillStack={handleAddSkillStack}
+          onEditSkill={handleEditSkill}
+          onAddSkill={handleAddSkill}
+          skillInfo={skillInfo}
         />
       </div>
 
